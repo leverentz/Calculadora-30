@@ -1,0 +1,27 @@
+name: Calculadora30
+options:
+  bundleIdPrefix: com.leverentz
+  deploymentTarget:
+    iOS: 15.0
+  xcodeVersion: "16.0"
+configs:
+  Debug: debug
+  Release: release
+
+targets:
+  Calculadora30:
+    type: application
+    platform: iOS
+    sources: .
+    resources: []
+    settings:
+      base:
+        PRODUCT_NAME: Calculadora30
+        INFOPLIST_FILE: Info.plist
+        SWIFT_VERSION: 5.0
+        IPHONEOS_DEPLOYMENT_TARGET: 15.0
+        TARGETED_DEVICE_FAMILY: "1,2"
+    scheme:
+      configVariants:
+        - Debug
+        - Release
