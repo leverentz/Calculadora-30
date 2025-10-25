@@ -1,0 +1,25 @@
+workflows:
+  ios-workflow:
+    name: Build iOS Calculadora 30%
+    environment:
+      xcode: latest
+    scripts:
+      - name: Install XcodeGen
+        script: |
+          brew update
+          brew install xcodegen
+      - name: Generate Xcode project
+        script: |
+          xcodegen generate
+          ls -la
+      - name: Build iOS app (no code signing)
+        script: |
+          xcodebuild -project "Calculadora30.xcodeproj" \
+          -scheme "Calculadora30" \
+          -sdk iphoneos \
+          -configuration Release \
+          CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+          build
+    artifacts:
+      - build/**/*.app
+      - build/**/*.ipa

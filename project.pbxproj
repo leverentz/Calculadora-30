@@ -1,0 +1,28 @@
+name: Calculadora30
+options:
+  deploymentTarget:
+    iOS: "15.0"
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.fer.calculadora30
+    PRODUCT_NAME: "Calculadora 30%"
+    SWIFT_VERSION: 5.0
+    TARGETED_DEVICE_FAMILY: 1
+    INFOPLIST_FILE: Info.plist
+
+targets:
+  Calculadora30:
+    type: application
+    platform: iOS
+    sources:
+      - path: .
+        excludes:
+          - codemagic.yaml
+          - project.yml
+    settings:
+      base:
+        INFOPLIST_FILE: Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.fer.calculadora30
+        PRODUCT_NAME: "Calculadora 30%"
+    scheme:
+      testTargets: []
